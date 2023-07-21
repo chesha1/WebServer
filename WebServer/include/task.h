@@ -14,7 +14,7 @@ namespace WebServer {
     template<typename T = void>
     class task {
     public:
-
+        using promise_type = task_promise<T>;
         explicit task(std::coroutine_handle<task_promise<T>> h) noexcept: m_handle(h) {}
 
         ~task() noexcept {

@@ -20,7 +20,7 @@ namespace WebServer {
         public:
             explicit schedule_awaiter(thread_pool &thread_pool);
 
-            bool await_ready() const noexcept;
+            [[nodiscard]] bool await_ready() const noexcept;
 
             void await_resume() const noexcept;
 
@@ -33,7 +33,7 @@ namespace WebServer {
         // 通过 co_await thread_pool.schedule() 挂起协程，将控制权交给线程池
         schedule_awaiter schedule();
 
-        size_t size() const noexcept;
+        [[nodiscard]] size_t size() const noexcept;
 
     private:
         std::stop_source stop_source_; // 停止信号源

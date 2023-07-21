@@ -8,5 +8,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(WebServer/include)
 
 file(GLOB SRC WebServer/*.cpp)
+file(GLOB HEADERS WebServer/include/*.h)
 
-add_executable(WebServer ${SRC})
+add_executable(WebServer ${SRC} ${HEADERS})
