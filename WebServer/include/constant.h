@@ -1,3 +1,5 @@
+#ifndef CONSTANT_H
+#define CONSTANT_H
 #include <cstddef>
 
 namespace WebServer {
@@ -15,3 +17,5 @@ namespace WebServer {
     constexpr size_t BUFFER_SIZE = 1024;
 
 }
+
+#endif

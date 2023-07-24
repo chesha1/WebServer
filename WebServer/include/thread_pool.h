@@ -1,3 +1,6 @@
+#ifndef THREAD_POOL_H
+#define THREAD_POOL_H
+
 #include <condition_variable>
 #include <coroutine>
 #include <cstddef>
@@ -49,3 +52,5 @@ namespace WebServer {
         void enqueue(std::coroutine_handle<> coroutine);
     };
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef FILE_DESCRIPTOR_H
+#define FILE_DESCRIPTOR_H
+
 #include <compare>
 #include <coroutine>
 #include <filesystem>
@@ -68,3 +71,4 @@ namespace WebServer {
     file_descriptor open(const std::filesystem::path &path);
 }
 
+#endif

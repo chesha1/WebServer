@@ -1,3 +1,6 @@
+#ifndef IO_URING_H
+#define IO_URING_H
+
 #include <liburing.h>
 #include <sys/socket.h>
 #include <span>
@@ -102,3 +105,7 @@ namespace WebServer {
         ::io_uring io_uring_;
     };
 }
+
+#endif
+
+

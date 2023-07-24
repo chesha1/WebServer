@@ -1,3 +1,6 @@
+#ifndef HTTP_PARSER_H
+#define HTTP_PARSER_H
+
 #include <optional>
 #include <span>
 #include <string>
@@ -16,3 +19,5 @@ namespace WebServer {
         std::string raw_http_request_;
     };
 }
+
+#endif

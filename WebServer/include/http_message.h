@@ -1,3 +1,6 @@
+#ifndef HTTP_MESSAGE_H
+#define HTTP_MESSAGE_H
+
 #include <string>
 #include <tuple>
 #include <vector>
@@ -24,3 +27,5 @@ namespace WebServer {
     };
 
 }
+
+#endif

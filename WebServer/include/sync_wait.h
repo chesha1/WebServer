@@ -1,3 +1,6 @@
+#ifndef SYNC_WAIT_H
+#define SYNC_WAIT_H
+
 #include <algorithm>
 #include <atomic>
 #include <optional>
@@ -148,3 +151,4 @@ namespace WebServer {
     }
 }
 
+#endif

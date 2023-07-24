@@ -1,3 +1,6 @@
+#ifndef SOCKET_H
+#define SOCKET_H
+
 #include <coroutine>
 #include <optional>
 #include <span>
@@ -97,3 +100,5 @@ namespace WebServer {
     };
 
 }
+
+#endif
