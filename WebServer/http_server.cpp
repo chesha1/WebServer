@@ -114,6 +114,11 @@ namespace WebServer {
             for (io_uring_cqe *const cqe: io_uring) {
                 // 获取关联的数据，将这些数据转换为 sqe_data 结构
                 auto *sqe_data = reinterpret_cast<struct sqe_data *>(io_uring_cqe_get_data(cqe));
+                // bug 2023-7-24
+                // 没有在提交 SQE 时设置 user_data ，或者错误地设置为了 NULL ，io_uring_cqe_get_data 会返回 NULL
+                // sqe_data 就也是 nullptr
+
+
                 sqe_data->cqe_res = cqe->res;
                 sqe_data->cqe_flags = cqe->flags;
                 void *const coroutine_address = sqe_data->coroutine;
@@ -126,6 +131,7 @@ namespace WebServer {
                 if (coroutine_address != nullptr) {
                     std::coroutine_handle<>::from_address(coroutine_address).resume();
                 }
+
 
                 // 通过这种方式，event_loop 函数可以处理所有的 IO 事件，并恢复等待这些事件的协程
                 // 这使得异步 IO 操作看起来像同步操作一样直观

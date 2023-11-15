@@ -113,6 +113,7 @@ namespace WebServer {
         [[nodiscard]] final_awaiter final_suspend() const noexcept { return final_awaiter{}; }
 
         void unhandled_exception() const noexcept { std::terminate(); }
+//        void unhandled_exception() const noexcept {  }
 
         std::optional<std::coroutine_handle<>> &get_calling_coroutine() noexcept {
             return calling_coroutine_;
